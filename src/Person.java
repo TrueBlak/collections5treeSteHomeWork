@@ -17,9 +17,9 @@ public class Person {
     }
 
     public int compareTo (Person p1) {
-        String[] s1 = p1.getSurname().split(" ", maxLastNameLength);
+        String[] s1 = p1.surname.split(" ", maxLastNameLength);
         Person p2 = this;
-        String[] s2 = p2.getSurname().split(" ", maxLastNameLength);
+        String[] s2 = p2.surname.split(" ", maxLastNameLength);
         if (s1.length > s2.length) {
             return 1;
         } else if (s1.length < s2.length) {
