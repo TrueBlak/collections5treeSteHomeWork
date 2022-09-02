@@ -13,9 +13,16 @@ public class Main {
         persons.add(new Person("Vlad", "Tepes Mercedes Le Dracula", 2550));
         persons.add(new Person("Andy", "Derris Hansen Lande Sammet", 999));
         Comparator<Person> personComparator = (o1, o2) -> {
-            Integer o1length = o1.getSurname().split(" ").length;
-            Integer o2length = o2.getSurname().split(" ").length;
-            return o2length.compareTo(o1length);
+            int maxLength = 0;
+            String[] a1 = o1.getSurname().split(" ", maxLength);
+            String[] a2 = o2.getSurname().split(" ", maxLength);
+            if (a1.length > a2.length) {
+                return -1;
+            } else if (a1.length < a2.length) {
+                return 1;
+            } else {
+                return Integer.compare(o2.getAge(), o1.getAge());
+            }
         };
 
         Collections.sort(persons, personComparator);
