@@ -13,8 +13,9 @@ public class Main {
         persons.add(new Person("Vlad", "Tepes Mercedes Le Dracula", 2550));
         persons.add(new Person("Andy", "Derris Hansen Lande Sammet", 999));
         Comparator<Person> personComparator = (o1, o2) -> {
-            o1.setMaxLastNameLength(0);
-            return o1.compareTo(o2);
+            Integer o1length = o1.getSurname().split(" ").length;
+            Integer o2length = o2.getSurname().split(" ").length;
+            return o2length.compareTo(o1length);
         };
 
         Collections.sort(persons, personComparator);
