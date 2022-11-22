@@ -4,6 +4,8 @@ public class Person {
     private String surname;
     private int age;
 
+    private int maxLastNameLength = 0;
+
     public Person (String name, String surname, int age) {
         this.name = name;
         this.surname = surname;
